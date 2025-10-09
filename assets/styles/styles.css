@@ -33,7 +33,7 @@ a:hover {
 }
 
 .section-title {
-    font-family: var(--font-heading);
+    font-family: dynapuff, sans-serif;
     font-size: 3rem;
     color: var(--color-secondary);
     margin-bottom: 50px;
@@ -92,7 +92,7 @@ header {
 
 .hero-content h1 {
     font-size: 6rem;
-    font-family: "Rock Salt", cursive;
+    font-family: "JetBrains Mono", monospace;
     color: var(--color-secondary);
     text-transform: uppercase;
     letter-spacing: 2px;
