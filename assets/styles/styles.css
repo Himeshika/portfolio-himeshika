@@ -1,12 +1,11 @@
 :root {
-    --color-primary: #3d004d; /* Deep Purple Background */
-    --color-secondary: #ffdd4a; /* Yellow Accent */
-    --color-text-light: #ffffff; /* White Text */
-    --color-text-dark: #333333; /* Dark Text */
-    --color-section-bg: #5f5f5f; /* Footer/Form Background */
-    --font-heading: 'Montserrat', sans-serif; /* Placeholder for custom bold/playful font */
-    --font-body: 'Arial', sans-serif;
+    --color-primary: #6a0dad;
+    --color-secondary: #ff6ec7;
+    --color-text-light: #ffffff;
+    --color-text-dark: #222222;
+    --color-section-bg: #f5f5f5;
 }
+
 
 * {
     margin: 0;
@@ -15,9 +14,6 @@
 }
 
 body {
-    background-color: var(--color-primary);
-    color: var(--color-text-light);
-    font-family: var(--font-body);
     line-height: 1.6;
 }
 
@@ -48,17 +44,26 @@ a:hover {
 
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 20px;              /* optional spacing from top */
+    left: 50%;              /* start at horizontal center */
+    transform: translateX(-50%); /* shift left by half its width */
+    width: 800px;
     padding: 20px 10%;
     z-index: 100;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #520088;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    border: 2px solid white;
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-end;
+    gap: 1rem;
 }
 
 .main-nav ul li a {
@@ -82,12 +87,22 @@ header {
     align-items: center;
     text-align: center;
     padding-top: 150px;
+    background: var(--color-primary);
 }
 
 .hero-content h1 {
     font-size: 6rem;
-    font-family: var(--font-heading);
+    font-family: "Rock Salt", cursive;
     color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+
+    /* Bold 3D-style shadow */
+    text-shadow:
+            4px 4px 0 #6a0dad,    /* first layer - deep violet */
+            8px 8px 0 white,    /* second layer - pink offset */
+            12px 12px 0 rgba(0,0,0,0.2); /* subtle soft shadow for depth */
 }
 
 .hero-content .subtitle {
