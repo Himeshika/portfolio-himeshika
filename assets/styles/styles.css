@@ -47,11 +47,11 @@ header {
     top: 20px;              /* optional spacing from top */
     left: 50%;              /* start at horizontal center */
     transform: translateX(-50%); /* shift left by half its width */
-    width: 800px;
+    width: 100%;
     padding: 20px 10%;
     z-index: 100;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background: #520088;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -62,16 +62,18 @@ header {
 .main-nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
+    gap: 1.8rem;
+     justify-content: center;
 }
 
 .main-nav ul li a {
-    color: var(--color-text-light);
+    color: black;
+    font-family: dynapuff, sans-serif;
     font-size: 1.1rem;
     padding: 10px 15px;
     border: 1px solid transparent;
     border-radius: 5px;
+
 }
 
 .main-nav ul li a:hover {
@@ -80,36 +82,90 @@ header {
 }
 
 
-/* --- 2. HOME/HERO SECTION --- */
+
 .hero-section {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 150px;
-    background: var(--color-primary);
+    padding-top: 180px; /* leave space for fixed header */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a0dad, #ff6ec7); /* gradient background */
+    color: var(--color-text-light);
+    position: relative;
+    overflow: hidden;
 }
+
 
 .hero-content h1 {
     font-size: 6rem;
     font-family: "JetBrains Mono", monospace;
-    color: var(--color-secondary);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
+    letter-spacing: 3px;
+    line-height: 1.1;
 
-    /* Bold 3D-style shadow */
+
     text-shadow:
-            4px 4px 0 #6a0dad,    /* first layer - deep violet */
-            8px 8px 0 white,    /* second layer - pink offset */
-            12px 12px 0 rgba(0,0,0,0.2); /* subtle soft shadow for depth */
+            4px 4px 0 #520088,
+            8px 8px 0 #ff6ec7,
+            12px 12px 0 rgba(0,0,0,0.25);
+    margin-bottom: 20px;
 }
 
+
 .hero-content .subtitle {
-    font-size: 1.5rem;
-    padding: 10px 0;
-    position: relative;
-    margin-bottom: 30px;
+    font-size: 1.6rem;
+    font-family: 'Dynapuff', sans-serif;
+    color: #ffffffcc;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+.about-me-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    font-size: 1.2rem;
+    font-family: 'Dynapuff', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    border: 3px solid var(--color-secondary);
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff6ec7, #6a0dad);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.about-me-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #6a0dad, #ff6ec7);
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    top: -100px;
+    left: -150px;
+    filter: blur(100px);
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    bottom: -80px;
+    right: -100px;
+    filter: blur(80px);
 }
 
 .about-me-btn {
