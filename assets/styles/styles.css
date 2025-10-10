@@ -1,12 +1,14 @@
 :root {
-    --color-primary: #6a0dad;
-    --color-secondary: #ff6ec7;
+    --color-primary: #f8f3ff;        /* Soft lavender */
+    --color-secondary: #b44fff;      /* Vibrant purple-pink for accents */
+    --color-accent: #ff8ee6;         /* Lighter pink accent */
+    --color-dark-accent: #6a0dad;    /* Deep purple for shadows/text */
     --color-text-light: #ffffff;
-    --color-text-dark: #222222;
-    --color-section-bg: #f5f5f5;
+    --color-text-dark: #2b2b2b;
+    --color-section-bg: #fff5fb;     /* Soft pastel background */
 }
 
-
+/* ---------- GLOBAL RESET ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -14,73 +16,76 @@
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    overflow-x: hidden;
 }
 
 a {
-    color: var(--color-secondary);
+    color: var(--color-dark-accent);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--color-text-light);
+    color: var(--color-secondary);
 }
 
+/* ---------- SECTIONS ---------- */
 .section-padding {
     padding: 80px 10%;
     min-height: 100vh;
+    background: var(--color-primary);
 }
 
 .section-title {
-    font-family: dynapuff, sans-serif;
+    font-family: 'Dynapuff', sans-serif;
     font-size: 3rem;
-    color: var(--color-secondary);
+    color: var(--color-dark-accent);
     margin-bottom: 50px;
-
+    text-align: center;
 }
 
-
-
+/* ---------- HEADER ---------- */
 header {
     position: fixed;
-    top: 20px;              /* optional spacing from top */
-    left: 50%;              /* start at horizontal center */
-    transform: translateX(-50%); /* shift left by half its width */
-    width: 100%;
-    padding: 20px 10%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 20px 5%;
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #520088;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: var(--color-secondary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
-    border: 2px solid white;
+    border: 2px solid #fff;
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
     gap: 1.8rem;
-     justify-content: center;
+    justify-content: center;
 }
 
 .main-nav ul li a {
-    color: black;
-    font-family: dynapuff, sans-serif;
+    color: var(--color-text-light);
+    font-family: 'Dynapuff', sans-serif;
     font-size: 1.1rem;
     padding: 10px 15px;
-    border: 1px solid transparent;
     border-radius: 5px;
-
+    transition: all 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-primary);
+    background-color: var(--color-text-light);
+    color: var(--color-dark-accent);
 }
-
 
 
 .hero-section {
@@ -88,14 +93,13 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 180px; /* leave space for fixed header */
+    padding-top: 180px;
     min-height: 100vh;
-    background: linear-gradient(135deg, #6a0dad, #ff6ec7); /* gradient background */
-    color: var(--color-text-light);
+    background: linear-gradient(135deg, #f8f3ff 0%, #fff5fb 100%);
+    color: var(--color-dark-accent);
     position: relative;
     overflow: hidden;
 }
-
 
 .hero-content h1 {
     font-size: 6rem;
@@ -103,25 +107,19 @@ header {
     text-transform: uppercase;
     letter-spacing: 3px;
     line-height: 1.1;
-
-
     text-shadow:
-            4px 4px 0 #520088,
-            8px 8px 0 #ff6ec7,
-            12px 12px 0 rgba(0,0,0,0.25);
+            3px 3px 0 var(--color-secondary),
+            6px 6px 0 rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-
 
 .hero-content .subtitle {
     font-size: 1.6rem;
     font-family: 'Dynapuff', sans-serif;
-    color: #ffffffcc;
+    color: #555;
     margin-bottom: 40px;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-
 
 .about-me-btn {
     display: inline-block;
@@ -131,50 +129,17 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     color: var(--color-text-light);
-    border: 3px solid var(--color-secondary);
+    border: none;
     border-radius: 50px;
-    background: linear-gradient(135deg, #ff6ec7, #6a0dad);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    box-shadow: 0 6px 15px rgba(180, 79, 255, 0.3);
     transition: all 0.3s ease;
 }
 
 .about-me-btn:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    background: linear-gradient(135deg, #6a0dad, #ff6ec7);
+    box-shadow: 0 10px 20px rgba(180, 79, 255, 0.4);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
 }
 
-.hero-section::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-    top: -100px;
-    left: -150px;
-    filter: blur(100px);
-}
 
-.hero-section::after {
-    content: "";
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 50%;
-    bottom: -80px;
-    right: -100px;
-    filter: blur(80px);
-}
-
-.about-me-btn {
-    display: inline-block;
-    padding: 10px 30px;
-    border: 2px solid var(--color-secondary);
-    color: var(--color-text-light);
-    border-radius: 30px;
-    background: transparent;
-    font-size: 1.1rem;
-    margin-top: 20px;
-}
