@@ -362,7 +362,8 @@ header {
 .project_details{
     width: 240px;
     height: 100px;
-    background: #00ddeb;
+    background: white;
+    border-radius: 8px;
 }
 
 .e-card {
@@ -411,6 +412,19 @@ header {
     color: yellow;
     right: 0;
     font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 221, 235, 0.6);
+}
+
+.infotop svg {
+    width: 48px;
+    height: 48px;
+    fill: #00ffee;
+    margin-bottom: 0.5em;
+    transition: transform 0.3s ease;
+}
+
+.e-card:hover .infotop svg {
+    transform: rotate(10deg) scale(1.1);
 }
 
 .name {
