@@ -60,7 +60,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--color-secondary);
+    background: #2c2c2c;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     border: 2px solid #fff;
@@ -341,9 +341,10 @@ header {
 #projects{
     width: 100%;
     height: auto;
-    background: linear-gradient(180deg, #001f3f 0%, #004080 40%, #007b9e 80%, #00ddeb 100%);
-    background-attachment: fixed;
-    background-size: cover;
+    /*background: linear-gradient(180deg, #001f3f 0%, #004080 40%, #007b9e 80%, #00ddeb 100%);*/
+    /*background-attachment: fixed;*/
+    /*background-size: cover;*/
+    background: #2c2c2c;
 }
 
 #project_wrapper{
