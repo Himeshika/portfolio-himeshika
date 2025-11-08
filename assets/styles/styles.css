@@ -584,86 +584,133 @@ header {
 }
 
 /* === About Section === */
+/* === ABOUT SECTION === */
 #about {
-    background: linear-gradient(135deg, #ffffff, #f8f9fc);
-    padding: 80px 10%;
-    color: #333;
+    background: linear-gradient(120deg, #fafafa, #f3f6fb);
+    padding: 100px 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Floating gradient background glow */
+#about::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(0,123,255,0.15), transparent 70%);
+    top: -150px;
+    right: -150px;
+    filter: blur(60px);
+    z-index: 0;
 }
 
 .about-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.8rem;
+    font-weight: 800;
     text-align: center;
+    background: linear-gradient(90deg, #007bff, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 70px;
     position: relative;
-    color: #222;
-    margin-bottom: 50px;
+    z-index: 1;
+    letter-spacing: 1px;
 }
 
 .about-title::after {
     content: "";
     position: absolute;
-    bottom: -10px;
+    bottom: -12px;
     left: 50%;
-    width: 80px;
-    height: 3px;
-    background-color: #007bff;
     transform: translateX(-50%);
+    width: 90px;
+    height: 3px;
     border-radius: 3px;
+    background: linear-gradient(90deg, #007bff, #00bfff);
+    animation: widthPulse 2s ease-in-out infinite alternate;
 }
 
-/* Content Layout */
+@keyframes widthPulse {
+    from { width: 60px; }
+    to { width: 120px; }
+}
+
+/* === Layout === */
 .about-me-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 70px;
     flex-wrap: wrap;
     max-width: 1100px;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
-/* Text Area */
+/* === Bio Text === */
 .bio-text {
     flex: 1 1 500px;
+    color: #333;
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #444;
-    text-align: justify;
+    transform: translateX(-60px);
+    opacity: 0;
+    transition: all 1s ease;
 }
 
 .bio-text p {
     margin-bottom: 20px;
+    color: #444;
 }
 
 .bio-text strong {
     color: #007bff;
+    font-weight: 600;
 }
 
-/* Profile Image */
+/* === Profile Image === */
 .profile-image-container {
-    flex: 1 1 300px;
+    flex: 1 1 320px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    transform: translateX(60px);
+    opacity: 0;
+    transition: all 1s ease;
 }
 
 .main-profile-pic {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 3px solid #fff;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .main-profile-pic:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: scale(1.07);
+    box-shadow: 0 0 40px rgba(0, 123, 255, 0.6);
 }
 
-/* === Responsive Design === */
+/* === Fade-In Animations on Scroll === */
+#about.visible .bio-text {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#about.visible .profile-image-container {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* === Responsive === */
 @media (max-width: 900px) {
     .about-me-content {
         flex-direction: column-reverse;
@@ -671,7 +718,11 @@ header {
     }
 
     .bio-text {
-        text-align: center;
+        transform: translateY(40px);
+    }
+
+    .profile-image-container {
+        transform: translateY(-40px);
     }
 
     .main-profile-pic {
@@ -679,16 +730,7 @@ header {
         height: 220px;
     }
 }
-#about {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
 
-#about.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 
 
