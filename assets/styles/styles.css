@@ -113,7 +113,7 @@ header {
     background-color: #2c343f; /* optional */
     z-index: 0; /* behind text */
 }
-.card {
+.cardX{
     position: absolute;
     left: 0;
     max-width: fit-content;
@@ -129,12 +129,12 @@ header {
     transition: 0.5s;
 }
 
-.card:hover {
+.cardX:hover {
     animation: ease-out 5s;
     background: rgba(173, 173, 173, 0.05);
 }
 
-.card ul {
+.cardX ul {
     padding: 1rem;
     display: flex;
     list-style: none;
@@ -146,7 +146,7 @@ header {
     flex-direction: column;
 }
 
-.card ul li {
+.cardX ul li {
     cursor: pointer;
 }
 
@@ -853,6 +853,330 @@ header {
     from { width: 60px; opacity: 0.6; }
     to   { width: 120px; opacity: 1; }
 }
+
+/*contact*/
+/* ====== CONTACT SECTION ====== */
+#contact {
+    background: #2c2c2c;
+    padding: 60px 20px;
+}
+
+#contact_container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* LEFT CARD */
+.card {
+    flex: 0 0 450px; /* fixed width */
+    height: 450px;
+    background: white;
+    border-radius: 48px;
+    padding: 6px;
+    position: relative;
+    box-shadow: #604b4a30 0px 100px 50px -30px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* MAIL ICON */
+.card .mail {
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    background: transparent;
+    border: none;
+}
+.card .mail svg {
+    stroke: #fbb9b6;
+    stroke-width: 3px;
+    transition: stroke 0.3s;
+}
+.card .mail svg:hover {
+    stroke: #f55d56;
+}
+
+/* PROFILE PICTURE */
+.card .profile-pic {
+    position: absolute;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    top: 6px;
+    left: 6px;
+    border-radius: 48px;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+}
+.card .profile-pic img,
+.card .profile-pic svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+/* BOTTOM INFO */
+.card .bottom {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
+    top: 70%;
+    background: #fbb9b6;
+    border-radius: 48px;
+    z-index: 2;
+    box-shadow: rgba(96, 75, 74, 0.188) 0px 5px 5px 0px inset;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+.card .bottom .content {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    right: 2rem;
+    height: 200px;
+}
+.card .bottom .content .name {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+}
+.card .bottom .content .about-me {
+    font-size: 1.1rem;
+    color: white;
+    margin-top: 1.2rem;
+}
+
+.card .bottom .bottom-bottom {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card .bottom .bottom-bottom .social-links-container {
+    display: flex;
+    gap: 1.5rem;
+}
+.card .bottom .bottom-bottom .social-links-container svg {
+    height: 28px;
+    width: 28px;
+    fill: white;
+    filter: drop-shadow(0 5px 5px rgba(165,132,130,0.13));
+    transition: all 0.3s;
+}
+.card .bottom .bottom-bottom .social-links-container svg:hover {
+    fill: #f55d56;
+    transform: scale(1.3);
+}
+.card .bottom .bottom-bottom .button {
+    background: white;
+    color: #fbb9b6;
+    border: none;
+    border-radius: 24px;
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    box-shadow: rgba(165,132,130,0.13) 0px 5px 5px 0px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.card .bottom .bottom-bottom .button:hover {
+    background: #f55d56;
+    color: white;
+}
+
+/* HOVER EFFECTS */
+.card:hover {
+    border-top-left-radius: 75px;
+}
+.card:hover .bottom {
+    top: 25%;
+    border-radius: 100px 48px 48px 48px;
+}
+.card:hover .profile-pic {
+    width: 160px;
+    height: 160px;
+    top: 20px;
+    left: 20px;
+    border-radius: 50%;
+    z-index: 3;
+    border: 10px solid #fbb9b6;
+    box-shadow: rgba(96,75,74,0.188) 0px 5px 5px 0px;
+}
+.card:hover .profile-pic:hover {
+    transform: scale(1.3);
+    border-radius: 0;
+}
+.card:hover .profile-pic img,
+.card:hover .profile-pic svg {
+    transform: scale(2.5);
+    object-position: 0 25px;
+}
+
+/* ====== RIGHT CONTACT FORM ====== */
+.background {
+    flex: 1 1 600px;
+    min-width: 300px;
+    max-width: 800px;
+}
+
+.background .container {
+    padding: 10px;
+    max-width: 100%;
+}
+
+/* SCREEN */
+.screen {
+    position: relative;
+    background: #3e3e3e;
+    border-radius: 15px;
+}
+.screen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 20px; right: 20px; bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
+/* SCREEN HEADER */
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #4d4d4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.screen-header-left {
+    display: flex;
+    gap: 5px;
+}
+.screen-header-button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.screen-header-button.close { background: #ed1c6f; }
+.screen-header-button.maximize { background: #e8e925; }
+.screen-header-button.minimize { background: #74c54f; }
+.screen-header-right { display: flex; gap: 2px; }
+.screen-header-ellipsis {
+    width: 3px; height: 3px; background: #999; border-radius: 50%;
+}
+
+/* SCREEN BODY */
+.screen-body {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.screen-body-item {
+    flex: 1 1 280px;
+    padding: 20px;
+}
+.screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+}
+
+/* APP TITLE */
+.app-title {
+    display: flex;
+    flex-direction: column;
+    font-size: 26px;
+    color: #ea1d6f;
+    position: relative;
+}
+.app-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 25px;
+    height: 4px;
+    background: #ea1d6f;
+}
+
+/* FORM STYLING */
+.app-contact { margin-top: auto; font-size: 12px; color: #888; }
+.app-form-group { margin-bottom: 15px; }
+.app-form-group.message { margin-top: 40px; }
+.app-form-group.buttons { text-align: right; margin-bottom: 0; }
+.app-form-control {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #666;
+    background: none;
+    color: #ddd;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.app-form-control::placeholder { color: #666; }
+.app-form-control:focus { border-bottom-color: #ddd; outline: none; }
+.app-form-button {
+    background: none;
+    border: none;
+    color: #ea1d6f;
+    font-size: 14px;
+    cursor: pointer;
+}
+.app-form-button:hover { color: #b9134f; }
+
+#contact{
+    padding-top: 20vh;
+    height: auto !important;
+    padding-bottom: 0;
+}
+#contact_container{
+    height: auto!important;
+}
+.credits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #ffa4bd;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+@media screen and (max-width: 520px) {
+    .app-title { flex-direction: row; gap: 12px; }
+    .app-title:after { display: none; }
+}
+@media screen and (max-width: 900px) {
+    #contact_container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .background {
+        flex: 0 1 100%;
+        max-width: 450px;
+        min-width: 300px;
+        margin-bottom: 30px;
+    }
+    .card{
+        display: none;
+    }
+    .screen-body {
+        flex-direction: column;
+    }
+    .screen-body-item {
+        padding: 20px;
+        width: 100%;
+    }
+}
+
 
 
 
