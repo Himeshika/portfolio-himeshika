@@ -58,12 +58,11 @@ header {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    max-width: 1200px;
-    padding: 15px 5%;
+    width: auto;
+    padding: 20px 40px;
     z-index: 100;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: #2c2c2c;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -71,34 +70,33 @@ header {
     border: 2px solid #fff;
 }
 
-.main-nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main-nav .nav-links {
+.main-nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-.main-nav .nav-links li a {
+.main-nav ul li a {
     color: var(--color-text-light);
     font-family: 'Dynapuff', sans-serif;
-    font-size: 1rem;
-    padding: 8px 12px;
+    font-size: 1.1rem;
+    padding: 10px 15px;
     border-radius: 5px;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
-.main-nav .nav-links li a:hover {
+.main-nav ul li a:hover {
     background-color: var(--color-text-light);
     color: var(--color-dark-accent);
 }
 
-/* Hamburger Menu */
+
+
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -114,30 +112,42 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Media Query for Small Screens */
+
 @media screen and (max-width: 768px) {
-    .main-nav .nav-links {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        height: calc(100vh - 70px);
-        width: 200px;
-        background: #2c2c2c;
+    header {
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 15px 20px;
+        justify-content: flex-start;
+        border-radius: 0;
+    }
+
+    .main-nav ul {
         flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        gap: 20px;
-        padding-top: 20px;
-        transition: right 0.3s ease;
+        gap: 1.5rem;
+        background: #2c2c2c;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 250px;
+        padding-top: 60px;
+        transition: left 0.3s ease;
         z-index: 99;
     }
 
-    .main-nav .nav-links.active {
-        right: 0;
+    .main-nav ul.active {
+        left: 0;
     }
 
+    .main-nav ul li a {
+        font-size: 1.2rem;
+    }
     .hamburger {
         display: flex;
+        z-index: 101;
+        margin-left: 20px;
     }
 }
 
@@ -145,7 +155,7 @@ header {
 
 
 .hero-section {
-    position: relative; /* so canvas can be positioned inside */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
