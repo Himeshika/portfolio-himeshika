@@ -19,6 +19,14 @@ section{
     width: 100%;
 }
 
+@media all and (max-width: 480px){
+    body{
+        padding: 0!important;
+    }
+}
+
+
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -348,6 +356,11 @@ header {
 /*hero section mobile*/
 @media all and (max-width: 480px) {
     /* HERO SECTION */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden;
+    }
     .hero-section {
         padding-top: 120px; /* reduce top padding */
         min-height: 100vh;
@@ -358,8 +371,12 @@ header {
     }
 
     .hero-content {
-        padding: 0 1.5rem;
+        padding: 0;
         text-align: center;
+    }
+
+    .cardX{
+        bottom: 10px;
     }
 
     .hero-content h1 {
@@ -406,6 +423,79 @@ header {
 
     .text {
         font-size: 0.75rem;
+    }
+
+    header{
+        width: 100%;
+        margin: 0 !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 16px;
+        margin: 0 !important;
+        transform: none;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: visible;
+        z-index: 200;
+    }
+
+
+    header .header-inner {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+
+    .hamburger {
+        display: flex;
+        flex: 0 0 auto;
+        margin-left: 8px;
+    }
+
+
+    .main-nav ul {
+        width: 250px;
+        left: -100%;
+        box-sizing: border-box;
+    }
+
+
+    .main-nav ul li {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+    }
+    .main-nav ul li a {
+        display: inline-block;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    .hero-section {
+        padding-top: calc(80px + 12px);
+    }
+
+
+    html, body {
+        overflow-x: hidden;
     }
 }
 
@@ -562,6 +652,45 @@ header {
         transform: rotate(360deg);
     }
 }
+
+@media (max-width: 480px) {
+    #project_wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .project_col {
+        align-items: center;
+    }
+
+    .e-card {
+        width: 85%;
+        height: 300px;
+        margin: 40px auto;
+    }
+
+    .infotop {
+        font-size: 16px;
+        top: 5em;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .project_details {
+        width: 85%;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .project_details p {
+        font-size: 14px;
+    }
+}
+
 
 /*skills*/
 
