@@ -58,12 +58,12 @@ header {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%; /* flexible width for small screens */
-    max-width: 1200px; /* optional, to limit very large screens */
+    width: 90%;
+    max-width: 1200px;
     padding: 15px 5%;
     z-index: 100;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: #2c2c2c;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -71,15 +71,20 @@ header {
     border: 2px solid #fff;
 }
 
-.main-nav ul {
+.main-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav .nav-links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap; /* allows items to wrap on small screens */
 }
 
-.main-nav ul li a {
+.main-nav .nav-links li a {
     color: var(--color-text-light);
     font-family: 'Dynapuff', sans-serif;
     font-size: 1rem;
@@ -88,24 +93,54 @@ header {
     transition: all 0.3s ease;
 }
 
-.main-nav ul li a:hover {
+.main-nav .nav-links li a:hover {
     background-color: var(--color-text-light);
     color: var(--color-dark-accent);
 }
 
-/* Media queries for smaller screens */
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Media Query for Small Screens */
 @media screen and (max-width: 768px) {
-    header {
+    .main-nav .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        height: calc(100vh - 70px);
+        width: 200px;
+        background: #2c2c2c;
         flex-direction: column;
-        width: 95%;
-        padding: 10px 3%;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+        padding-top: 20px;
+        transition: right 0.3s ease;
+        z-index: 99;
     }
 
-    .main-nav ul {
-        flex-direction: column;
-        gap: 10px;
+    .main-nav .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: flex;
     }
 }
+
 
 
 
