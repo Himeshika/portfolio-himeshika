@@ -58,8 +58,9 @@ header {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50%;
-    padding: 20px 5%;
+    width: 90%; /* flexible width for small screens */
+    max-width: 1200px; /* optional, to limit very large screens */
+    padding: 15px 5%;
     z-index: 100;
     display: flex;
     justify-content: center;
@@ -73,15 +74,16 @@ header {
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 1.8rem;
+    gap: 1.5rem;
     justify-content: center;
+    flex-wrap: wrap; /* allows items to wrap on small screens */
 }
 
 .main-nav ul li a {
     color: var(--color-text-light);
     font-family: 'Dynapuff', sans-serif;
-    font-size: 1.1rem;
-    padding: 10px 15px;
+    font-size: 1rem;
+    padding: 8px 12px;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
@@ -90,6 +92,21 @@ header {
     background-color: var(--color-text-light);
     color: var(--color-dark-accent);
 }
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        width: 95%;
+        padding: 10px 3%;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
 
 
 .hero-section {
@@ -1176,6 +1193,92 @@ header {
         width: 100%;
     }
 }
+
+.cardS{
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* for all social containers*/
+.socialContainer {
+    width: 40px;
+    height: 50px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 1.2s;
+    border-radius: 15px 0 15px 0px;
+}
+/* instagram*/
+.containerOne:hover {
+    background-color: #d62976;
+    transition-duration: 1.2s;
+}
+/* twitter*/
+.containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: 1.2s;
+}
+/* linkdin*/
+.containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: 1.2s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+    background-color: #f90101;
+    transition-duration: 1.2s;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 1.2s;
+}
+
+.socialSvg {
+    width: 17px;
+}
+
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 1.2s both;
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cardS{
+    display: none;
+}
+
+@media screen and (max-width: 900px){
+  .cardS{
+      display: flex;
+      flex-direction: row;
+  }
+}
+
 
 
 
